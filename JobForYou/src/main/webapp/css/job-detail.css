@@ -1,0 +1,49 @@
+body {
+    background-color: #f4f7fb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-color: #0066cc;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.container {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    color: #0073e6;
+    margin-bottom: 20px;
+}
+
+.job-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.job-info span {
+    font-weight: bold;
+}
+
+.btn-back {
+    background-color: #0066cc;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 25px;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    background-color: #004a99;
+}

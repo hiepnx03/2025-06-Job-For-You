@@ -1,0 +1,108 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               8.0.30 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.1.0.6537
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Dumping database structure for jobsdb
+CREATE DATABASE IF NOT EXISTS `jobsdb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `jobsdb`;
+
+-- Dumping structure for table jobsdb.careers
+CREATE TABLE IF NOT EXISTS `careers` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table jobsdb.careers: ~0 rows (approximately)
+INSERT INTO `careers` (`id`, `name`, `description`) VALUES
+	(1, 'Kỹ sư phần mềm', 'Phát triển và bảo trì các ứng dụng phần mềm.'),
+	(2, 'Kế toán', 'Quản lý tài chính và báo cáo thuế.'),
+	(3, 'Thiết kế đồ họa', 'Tạo các thiết kế hình ảnh và giao diện người dùng.');
+
+-- Dumping structure for table jobsdb.companies
+CREATE TABLE IF NOT EXISTS `companies` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `logo_url` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table jobsdb.companies: ~3 rows (approximately)
+INSERT INTO `companies` (`id`, `name`, `logo_url`) VALUES
+	(1, 'FPT Software', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/FPT_Software_logo.svg/1200px-FPT_Software_logo.svg.png'),
+	(2, 'VinGroup', 'https://upload.wikimedia.org/wikipedia/vi/thumb/9/98/Vingroup_logo.svg/1200px-Vingroup_logo.svg.png'),
+	(3, 'Tập đoàn CityLand', 'https://images.vietnamworks.com/logo/cityland_vip_124712.png');
+
+-- Dumping structure for table jobsdb.contacts
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table jobsdb.contacts: ~0 rows (approximately)
+INSERT INTO `contacts` (`id`, `email`, `phone`, `address`) VALUES
+	(1, 'contact@jobforyou.com', '+84 123 456 789', '123 Đường ABC, Hà Nội'),
+	(2, 'support@jobforyou.com', '+84 987 654 321', '456 Đường XYZ, TP. Hồ Chí Minh');
+
+-- Dumping structure for table jobsdb.jobs
+CREATE TABLE IF NOT EXISTS `jobs` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `company` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `salary` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `requirement` text COLLATE utf8mb4_unicode_ci,
+  `posted_date` date DEFAULT NULL,
+  `deadline` date DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `working_time` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `job_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table jobsdb.jobs: ~3 rows (approximately)
+INSERT INTO `jobs` (`id`, `title`, `company`, `location`, `salary`, `description`, `requirement`, `posted_date`, `deadline`, `address`, `working_time`, `job_type`) VALUES
+	(1, 'Kỹ sư phần mềm Java', 'FPT Software', 'Hà Nội', '20-30 triệu VND', 'Phát triển ứng dụng web bằng Java.', 'Kinh nghiệm 2 năm, thành thạo Java, Spring.', NULL, NULL, NULL, NULL, 'Fulltime'),
+	(2, 'Nhân viên kế toán', 'VinGroup', 'TP. Hồ Chí Minh', '15-25 triệu VND', 'Quản lý sổ sách và báo cáo tài chính.', 'Tốt nghiệp kế toán, có chứng chỉ B1.', NULL, NULL, NULL, NULL, 'Fulltime'),
+	(3, 'Thiết kế đồ họa UI/UX', 'Tập đoàn CityLand', 'Đà Nẵng', '18-28 triệu VND', 'Thiết kế giao diện cho website và ứng dụng.', 'Thành thạo Adobe XD, Figma.', NULL, NULL, NULL, NULL, 'Fulltime');
+
+-- Dumping structure for table jobsdb.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT 'user',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table jobsdb.users: ~0 rows (approximately)
+INSERT INTO `users` (`id`, `email`, `password`, `name`, `role`) VALUES
+	(1, 'admin@gmail.com', 'admin', 'admin', 'admin'),
+	(2, 'user@gmail.com', 'user', 'user', 'user'),
+	(3, 'user2@gmail.com', 'password456', 'Trần Thị B', 'user');
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

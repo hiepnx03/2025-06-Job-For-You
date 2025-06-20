@@ -1,0 +1,50 @@
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-color: #141c48;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d4d4d4;
+}
+
+.navbar-brand.clicked {
+    color: orange !important;
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 15px;
+}
+
+.nav-link:hover {
+    color: #ffcc00 !important;
+}
+
+.card {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    border-top: 4px solid #0056b3;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+    font-weight: bold;
+    color: #141c48;
+}
+
+h2 {
+    color: #0056b3;
+}

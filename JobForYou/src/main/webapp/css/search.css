@@ -1,0 +1,128 @@
+body {
+    background-color: #f4f7fb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-color: #0066cc;
+    border-bottom: 2px solid #004a99;
+}
+
+.navbar-brand {
+    font-size: 26px;
+    font-weight: bold;
+    color: #d4d4d4;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00;
+}
+
+.search-info {
+    padding: 20px 0;
+    background-color: #005bb5;
+    color: white;
+    text-align: center;
+}
+
+.search-info h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.search-info p {
+    font-size: 18px;
+}
+
+.result-container {
+    margin-top: 40px;
+}
+
+.job-card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.job-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.job-card .card-body {
+    text-align: left;
+}
+
+.job-card h5 {
+    font-size: 20px;
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+.job-card p {
+    color: #777;
+    font-size: 14px;
+}
+
+.job-card .btn {
+    background-color: #0066cc;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 14px;
+}
+
+.job-card .btn:hover {
+    background-color: #004a99;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col-md-4 {
+    flex: 1 1 calc(33% - 20px);
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 1 1 100%;
+    }
+}
+
+.additional-jobs {
+    background-color: #f0f4f8;
+    padding: 40px 0;
+}
+
+.additional-jobs h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.job-card .details {
+    margin-top: 20px;
+}
+
+.details p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.details span {
+    font-weight: bold;
+}
