@@ -48,11 +48,11 @@ Dự án **JobForYou** sử dụng các công nghệ và thư viện sau:
      ```sql
      CREATE DATABASE jobsdb;
      ```
-   - Cập nhật thông tin kết nối database trong file `application.properties` hoặc `application.yml`:
+   - Cập nhật thông tin kết nối database trong file `hibernate.cfg.xml`:
      ```properties
-     spring.datasource.url=jdbc:mysql://localhost:3306/jobsdb
-     spring.datasource.username=root
-     spring.datasource.password=<mật-khẩu>
+     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jobsdb</property>
+     <property name="hibernate.connection.username">root</property>
+     <property name="hibernate.connection.password"><mật-khẩu></property>
      ```
 
 3. **Cài đặt phụ thuộc**:
